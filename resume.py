@@ -110,3 +110,8 @@ def get_pretty_resume():
     for achievement in resume_data["achievements"]:
         console.print(f"✔ {achievement}", style="white")
     return resume_data
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Default to 8000 if PORT is not set
+    uvicorn.run(app, host="0.0.0.0", port=port)
